@@ -25,7 +25,12 @@ connectDB();
 // Core middleware
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: [
+      process.env.CLIENT_URL,
+      "http://localhost:5173",
+      "https://srilinelectronics.com",
+      "https://www.srilinelectronics.com"
+    ].filter(Boolean),
     credentials: true, // allow cookies to be sent cross-origin
   })
 );
