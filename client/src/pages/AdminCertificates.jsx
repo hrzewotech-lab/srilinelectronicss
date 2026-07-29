@@ -75,6 +75,7 @@ export default function AdminCertificates() {
   };
 
   const startEdit = (certificate) => {
+    document.querySelector('.admin-content')?.scrollTo({ top: 0, behavior: 'smooth' });
     setEditingId(certificate._id);
     setForm({
       name: certificate.name,

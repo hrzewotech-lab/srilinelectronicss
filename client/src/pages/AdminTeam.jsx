@@ -71,6 +71,7 @@ export default function AdminTeam() {
   };
 
   const startEdit = (member) => {
+    document.querySelector('.admin-content')?.scrollTo({ top: 0, behavior: 'smooth' });
     setEditingId(member._id);
     setForm({
       name: member.name,

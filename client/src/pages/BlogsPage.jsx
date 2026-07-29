@@ -9,7 +9,7 @@ import api from '../api/axios';
 
 function useTypewriter(text, speed = 40) {
   const [typed, setTyped] = useState('');
-  const [done, setDone]   = useState(false);
+  const [done, setDone] = useState(false);
   useEffect(() => {
     setTyped(''); setDone(false);
     if (!text) return;
@@ -49,12 +49,12 @@ function Reveal({ children, delay = 0, y = 24, className = '', style = {} }) {
 }
 
 function AnimatedNumber({ value }) {
-  const ref     = useRef(null);
+  const ref = useRef(null);
   const started = useRef(false);
   const [display, setDisplay] = useState(value);
   useEffect(() => {
     started.current = false;
-    const el  = ref.current;
+    const el = ref.current;
     const num = Number(value);
     if (!el || isNaN(num)) { setDisplay(value); return; }
     const obs = new IntersectionObserver(([e]) => {
@@ -80,9 +80,9 @@ function AnimatedNumber({ value }) {
    PAGE COMPONENT
    ════════════════════════════════════════════════════════════════ */
 export default function BlogsPage() {
-  const [blogs, setBlogs]     = useState([]);
+  const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError]     = useState('');
+  const [error, setError] = useState('');
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   useEffect(() => {
@@ -100,7 +100,7 @@ export default function BlogsPage() {
     loadBlogs();
   }, []);
 
-  const heroText              = 'Insights & Technical Updates';
+  const heroText = 'Insights & Technical Updates';
   const [typedHero, heroDone] = useTypewriter(heroText, 42);
 
   return (
@@ -130,15 +130,17 @@ export default function BlogsPage() {
               style={{ minHeight: '1.1em' }}>
               {typedHero}
               {!heroDone && (
-                <span style={{ display: 'inline-block', width: 3, height: '0.85em', background: '#c29f5d',
-                  marginLeft: 4, verticalAlign: 'middle', animation: 'cursorBlink 0.75s step-end infinite' }} />
+                <span style={{
+                  display: 'inline-block', width: 3, height: '0.85em', background: '#c29f5d',
+                  marginLeft: 4, verticalAlign: 'middle', animation: 'cursorBlink 0.75s step-end infinite'
+                }} />
               )}
             </h1>
 
             {/* Sub-text fades after typing */}
             <p className="text-white/75 text-sm sm:text-base leading-relaxed mb-5 md:mb-6 max-w-lg"
               style={{ opacity: heroDone ? 1 : 0, transform: heroDone ? 'none' : 'translateY(8px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
-              Read the latest engineering, manufacturing, and quality articles from our team.
+              Explore the latest engineering insights, manufacturing innovations, quality best practices, and industry updates from our team.
             </p>
           </div>
 
@@ -168,21 +170,21 @@ export default function BlogsPage() {
                 Celebrating 6X Growth in FY 2025-26
               </h2>
               <p className="text-sm sm:text-base text-[#44474d] leading-relaxed">
-                SriLin Electronics is proud to announce an extraordinary milestone of 6X growth, expanded manufacturing capabilities, and a message of gratitude from our MD & CEO. 
+                SriLin Electronics is proud to announce an extraordinary milestone of 6X growth, expanded manufacturing capabilities, and a message of gratitude from our MD & CEO.
               </p>
               <p className="text-sm text-[#44474d] leading-relaxed">
                 We have doubled our assembly capacity, integrated advanced laser marking and ultrasonic welding machinery, set up a next-gen reliability testing burn-in room, and established a state-of-the-art testing laboratory. We are also introducing our Electronics Design & Development services, covering complete concept-to-production support.
               </p>
               <div className="flex flex-wrap gap-4 pt-2">
-                <button 
+                <button
                   onClick={() => setIsLightboxOpen(true)}
                   className="px-5 py-2.5 bg-[#0F172A] hover:bg-[#1e293b] text-white text-sm font-semibold transition-all duration-200 rounded-lg shadow-sm flex items-center gap-2 cursor-pointer"
                 >
                   <ZoomIn size={16} />
                   View Full Pamphlet
                 </button>
-                <a 
-                  href="/blog-pamphlet.jpg" 
+                <a
+                  href="/blog-pamphlet.jpg"
                   download="SriLin-6X-Growth-Pamphlet.jpg"
                   className="px-5 py-2.5 border border-[#E2E8F0] hover:border-[#c29f5d] text-[#0F172A] hover:text-[#9a7a3e] text-sm font-semibold transition-all duration-200 rounded-lg flex items-center gap-2"
                 >
@@ -191,16 +193,16 @@ export default function BlogsPage() {
                 </a>
               </div>
             </div>
-            
+
             <div className="lg:col-span-5 flex justify-center items-center">
-              <div 
+              <div
                 onClick={() => setIsLightboxOpen(true)}
                 className="relative group cursor-zoom-in overflow-hidden rounded-2xl border border-[#E2E8F0] hover:border-[#c29f5d]/50 shadow-md max-w-sm w-full transition-all duration-300 hover:shadow-lg"
               >
-                <img 
-                  src="/blog-pamphlet.jpg" 
-                  alt="SriLin Growth & Capabilities Pamphlet" 
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-103" 
+                <img
+                  src="/blog-pamphlet.jpg"
+                  alt="SriLin Growth & Capabilities Pamphlet"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-103"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-[#0F172A]/10 transition-colors flex items-center justify-center">
                   <span className="opacity-0 group-hover:opacity-100 bg-[#0F172A]/90 backdrop-blur-sm text-white text-xs px-3.5 py-2 rounded-full font-semibold transition-all duration-300 shadow-md flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0">
@@ -268,25 +270,25 @@ export default function BlogsPage() {
 
       {/* ══ LIGHTBOX MODAL ═════════════════════════════════════════ */}
       {isLightboxOpen && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 cursor-zoom-out animate-fadeIn"
+        <div
+          className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/85 backdrop-blur-md p-4 cursor-zoom-out animate-fadeIn"
           onClick={() => setIsLightboxOpen(false)}
         >
           <div className="relative max-w-3xl w-full max-h-[90vh] flex flex-col items-center animate-scaleIn">
-            <button 
+            <button
               className="fixed top-6 right-6 text-white/80 hover:text-white bg-black/40 hover:bg-black/60 p-2.5 rounded-full transition-colors cursor-pointer"
               onClick={() => setIsLightboxOpen(false)}
               aria-label="Close modal"
             >
               <X size={24} />
             </button>
-            <div 
+            <div
               className="bg-white p-2 rounded-2xl shadow-2xl overflow-y-auto max-h-[80vh] flex justify-center cursor-default"
               onClick={(e) => e.stopPropagation()}
             >
-              <img 
-                src="/blog-pamphlet.jpg" 
-                alt="SriLin Growth & Capabilities Pamphlet - Full View" 
+              <img
+                src="/blog-pamphlet.jpg"
+                alt="SriLin Growth & Capabilities Pamphlet - Full View"
                 className="max-w-full h-auto max-h-[75vh] object-contain rounded-xl"
               />
             </div>

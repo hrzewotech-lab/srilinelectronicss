@@ -397,9 +397,7 @@ export default function InfrastructureMachineryPage() {
               className="text-white/75 text-sm sm:text-base leading-relaxed mb-5 md:mb-6 max-w-lg"
               style={{ opacity: heroDone ? 1 : 0, transform: heroDone ? 'none' : 'translateY(8px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}
             >
-              Electronics manufacturing services Hyderabad India - PCB manufacturing facility.
-              SriLin's SMT line combines automated printing, inline 3D inspection,
-              and high-speed assembly — engineered for Class 3 reliability.
+              Electronics Manufacturing Services in Hyderabad, India. Srilin's PCB manufacturing facility features an SMT line with automated printing, inline 3D inspection, and high-speed assembly—engineered for IPC Class 3 reliability.
             </p>
             <div
               className="flex flex-wrap gap-2.5 sm:gap-3"

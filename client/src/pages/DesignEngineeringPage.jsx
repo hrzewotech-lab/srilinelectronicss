@@ -320,7 +320,7 @@ export default function DesignEngineeringPage() {
                       </h2>
                     </div>
                     <div className="flex items-center gap-3 shrink-0">
-                      <span className="font-['JetBrains_Mono'] text-[#E2E8F0] text-2xl font-bold select-none hidden sm:block">
+                      <span className="font-['JetBrains_Mono'] text-[#94a3b8] text-2xl font-bold select-none hidden sm:block">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                       <div className="w-10 h-10 flex items-center justify-center bg-[#c29f5d]/10 text-[#c29f5d] rounded-lg transition-colors">

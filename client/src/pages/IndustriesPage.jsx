@@ -67,7 +67,7 @@ const industries = [
     name: 'Medical Devices',
     icon: Activity,
     description:
-      'Life-saving diagnostic equipment and surgical robotics. Clean-room SMT lines certified to ISO 13485 with full traceability.',
+      'Life-saving diagnostic equipment and surgical robotics. Cleanroom SMT lines compliant with ISO 13485, ensuring full traceability.',
     tag: 'Traceability V4.0',
   },
 ];
@@ -83,7 +83,7 @@ const benchmarkRows = [
   },
   {
     metric: 'Cleanliness',
-    values: ['Ionic Contam. Test', 'Class 10k Cleanroom', 'Standard ESD-Safe'],
+    values: ['Ionic Contam. Test', '100K Cleanroom', 'Standard ESD-Safe'],
   },
   {
     metric: 'Traceability',

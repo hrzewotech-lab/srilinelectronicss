@@ -67,6 +67,7 @@ export default function AdminProducts() {
   };
 
   const startEdit = (product) => {
+    document.querySelector('.admin-content')?.scrollTo({ top: 0, behavior: 'smooth' });
     setEditingId(product._id);
     setForm({
       name: product.name,

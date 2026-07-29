@@ -202,8 +202,7 @@ export default function ServicesPage() {
             {/* Sub-text fades in after typing */}
             <p className="text-white/80 text-sm sm:text-base md:text-lg mb-5 md:mb-8 max-w-lg"
               style={{ opacity: heroDone ? 1 : 0, transform: heroDone ? 'none' : 'translateY(8px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
-              Delivering tier-one electronics manufacturing services with aerospace-grade
-              reliability, managed live from our service capability database.
+              Delivering tier-one electronics manufacturing services with aerospace-grade reliability and end-to-end manufacturing excellence.
             </p>
 
             {/* Service count badge — fades + counts up */}
@@ -257,8 +256,8 @@ export default function ServicesPage() {
                             href={`#service-${service._id}`}
                             onClick={() => setActiveId(service._id)}
                             className={`group flex items-center justify-between gap-2 px-3 lg:p-4 py-2 border-l-4 font-['JetBrains_Mono'] text-xs md:text-sm transition-all ${activeId === service._id
-                                ? 'bg-white border-[#9a7a3e] text-[#9a7a3e]'
-                                : 'bg-white lg:bg-transparent border-[#E2E8F0] lg:border-transparent text-[#334155] hover:border-[#9a7a3e]/40 hover:bg-[#eceef0]'
+                              ? 'bg-white border-[#9a7a3e] text-[#9a7a3e]'
+                              : 'bg-white lg:bg-transparent border-[#E2E8F0] lg:border-transparent text-[#334155] hover:border-[#9a7a3e]/40 hover:bg-[#eceef0]'
                               }`}
                           >
                             <span className="truncate pr-1 max-w-[160px] lg:max-w-none">

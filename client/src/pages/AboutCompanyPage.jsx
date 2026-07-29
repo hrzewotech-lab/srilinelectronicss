@@ -74,7 +74,7 @@ const aboutHighlights = [
     icon: BadgeCheck,
     title: 'Quality First Approach',
     meta: '3D SPI, 3D AOI and X-ray systems',
-    text: 'Multi-stage inspection with 3D SPI, 3D AOI, and X-ray systems. Mounter accuracy 0.025mm, CpK >= 1.00 (3 sigma).',
+    text: 'Multi-stage inspection with 3D SPI, 3D AOI, and X-ray systems. SMT placement accuracy of ±0.025 mm, CpK >= 1.00 (3 sigma).',
   },
 ];
 
@@ -246,7 +246,7 @@ export default function AboutCompanyPage() {
               style={{ opacity: heroDone ? 1 : 0, transform: heroDone ? 'none' : 'translateY(8px)', transition: 'opacity 0.6s 0.15s ease, transform 0.6s 0.15s ease' }}
               aria-label="Srilin certifications">
               <span className="inline-flex items-center gap-1.5 bg-white/5 border border-[#c29f5d]/30 text-[#ffd199] text-xs font-semibold px-3 py-1.5 backdrop-blur-sm">
-                <CheckCircleIcon size={13} /> ISO &amp; AS9 Certified
+                <CheckCircleIcon size={13} /> ISO &amp; AS Certified
               </span>
               <span className="inline-flex items-center gap-1.5 bg-white/5 border border-[#c29f5d]/30 text-[#ffd199] text-xs font-semibold px-3 py-1.5 backdrop-blur-sm">
                 <Building2 size={13} /> E-City EMC, Hyderabad
@@ -268,10 +268,10 @@ export default function AboutCompanyPage() {
               About Srilin
             </h2>
             <p className="text-[#44474d] mt-4 leading-relaxed">
-              Srilin Electronics Pvt Ltd is an ISO9001:2015, AS9100D, ANSI ESD S20.20 2021 & IEC 61340 5.1 certified Premier Electronics System Design & Manufacturing Services (ESDM/EMS) company located in E-city EMC (Formerly Fabcity), Hyderabad, India. The company was established in 2017 to help the developing interest of Electronic Assembling in India. Our one-stop-solution electronics manufacturing services (EMS) factory incorporates quick prototyping, mid-range volume production to high volume production.
+              Srilin Electronics Pvt Ltd is an ISO9001:2015, AS9100D, ANSI ESD S20.20 2021 & IEC 61340 5.1 certified Premier Electronics System Design & Manufacturing Services (ESDM/EMS) company located in E-city EMC (Formerly Fabcity), Hyderabad, India. The company was established in 2017 to support the growing demand for Electronics Manufacturing Services (EMS). Our one-stop-solution electronics manufacturing services (EMS) factory incorporates quick prototyping, mid-range volume production to high volume production.
             </p>
             <p className="text-[#44474d] mt-4 leading-relaxed">
-              We provide Embedded Design, SMT Mounting, product integration, Testing & box build services. Our products are manufactured using Robust and advanced SMT machinery in Class 100000(ISO-8) Cleanroom to meet world wide quality standards. We also provide comprehensive supply chain management.we offer our administrations to a wide range of customers for their product development and support them in convertibility and scalability of manufacturing. SRILIN has been the favoured worth maker for its clients through imaginative and effective Electronic System Assembling. </p>
+              We provide Embedded Design, SMT Assembly, product integration, Testing & box build services. Our products are manufactured using Robust and advanced SMT machinery in Class 100000(ISO-8) Cleanroom to meet worldwide quality standards. We also provide comprehensive supply chain management.We offer our services to a wide range of customers for their product development and We support our customers with scalable and flexible manufacturing solutions.. SRILIN has been the favoured worth maker for its clients through imaginative and effective Electronic System Assembling. </p>
 
             <div className="mt-6 flex flex-wrap gap-3" aria-label="Srilin certifications">
               {certificationBadges.map((cert, i) => (
@@ -300,7 +300,7 @@ export default function AboutCompanyPage() {
                   </div>
                 </div>
                 <p className="text-sm text-[#44474d] leading-relaxed">
-                  15 minutes from Rajiv Gandhi International Airport and cargo terminal. Positioned in
+                  Located just 15 minutes from Rajiv Gandhi International Airport and the cargo terminal. Positioned in
                   Hyderabad's manufacturing corridor for aerospace and defence electronics.
                 </p>
               </div>

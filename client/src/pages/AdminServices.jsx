@@ -68,6 +68,7 @@ export default function AdminServices() {
   };
 
   const startEdit = (service) => {
+    document.querySelector('.admin-content')?.scrollTo({ top: 0, behavior: 'smooth' });
     setEditingId(service._id);
     setForm({
       title: service.title,

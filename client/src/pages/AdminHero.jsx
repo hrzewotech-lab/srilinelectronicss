@@ -67,6 +67,7 @@ export default function AdminHero() {
   };
 
   const startEdit = (slide) => {
+    document.querySelector('.admin-content')?.scrollTo({ top: 0, behavior: 'smooth' });
     setEditingId(slide._id);
     setForm({
       title: slide.title,

@@ -67,6 +67,7 @@ export default function AdminBlog() {
   };
 
   const startEdit = (blog) => {
+    document.querySelector('.admin-content')?.scrollTo({ top: 0, behavior: 'smooth' });
     setEditingId(blog._id);
     setForm({ title: blog.title, description: blog.description, isActive: blog.isActive, order: blog.order ?? 0, image: null });
   };

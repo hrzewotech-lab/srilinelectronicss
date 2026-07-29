@@ -66,6 +66,7 @@ export default function AdminClients() {
   };
 
   const startEdit = (client) => {
+    document.querySelector('.admin-content')?.scrollTo({ top: 0, behavior: 'smooth' });
     setEditingId(client._id);
     setForm({
       companyName: client.companyName,

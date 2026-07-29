@@ -78,6 +78,7 @@ export default function AdminUsers() {
   };
 
   const startEdit = (user) => {
+    document.querySelector('.admin-content')?.scrollTo({ top: 0, behavior: 'smooth' });
     setEditingId(user._id);
     setForm({ name: user.name, email: user.email, password: '', role: user.role });
   };

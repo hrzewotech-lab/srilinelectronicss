@@ -79,7 +79,7 @@ export default function AdminFaqs() {
       isActive: faq.isActive,
       order: faq.order ?? 0,
     });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.querySelector('.admin-content')?.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const toggleActive = async (faq) => {

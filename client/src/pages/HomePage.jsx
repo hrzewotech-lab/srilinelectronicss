@@ -18,7 +18,7 @@ const whyChoose = [
   { icon: ShieldCheck, title: 'High Reliability Specialist', meta: 'Aerospace, defence, automotive and more', text: 'AS910OD certified with active production across Aerospace, Defence, Automotive, IT Hardware, Telecom, Medtech and Consumer Electronics. Srilin operates in sectors where product failure carries critical consequences. Every board is traceable from component to shipment.' },
   { icon: TrendingUp, title: 'Built to Scale', meta: '8x expansion footprint on same campus', text: '214,000 sqft of expansion space adjacent to the current 25,000 sqft facility. 8x the current footprint on the same campus. No greenfield construction required. Dedicated production clusters can be established for strategic partners.' },
   { icon: Smile, title: 'Customer Satisfaction', meta: 'Flexible volumes and account ownership', text: 'Dedicated account management, quick prototyping, and flexible production volumes tailored to your exact requirements.' },
-  { icon: BadgeCheck, title: 'Quality First Approach', meta: '3D SPI, 3D AOI and X-ray systems', text: 'Multi-stage inspection with 3D SPI, 3D AOI, and X-ray systems. Mounter accuracy 0.025mm, CpK ≥ 1.00 (3σ).' },
+  { icon: BadgeCheck, title: 'Quality First Approach', meta: '3D SPI, 3D AOI and X-ray systems', text: 'Multi-stage inspection with 3D SPI, 3D AOI, and X-ray systems. SMT placement accuracy of ±0.025 mm, CpK ≥ 1.00 (3σ).' },
 ];
 const industries = [
   ['Automotive', Car],
@@ -406,10 +406,10 @@ export default function HomePage() {
                 Srilin Electronics<br />Private Limited
               </h2>
               <p className="text-[#334155] text-base sm:text-lg leading-relaxed">
-                Srilin Electronics Pvt Ltd is an ISO9001:2015, AS9100D, ANSI ESD S20.20 2021 & IEC 61340 5.1 certified Premier Electronics System Design & Manufacturing Services (ESDM/EMS) company located in E-city EMC (Formerly Fabcity), Hyderabad, India. The company was established in 2017 to help the developing interest of Electronic Assembling in India. Our one-stop-solution electronics manufacturing services (EMS) factory incorporates quick prototyping, mid-range volume production to high volume production.
+                Srilin Electronics Pvt Ltd is an ISO9001:2015, AS9100D, ANSI ESD S20.20 2021 & IEC 61340 5.1 certified Premier Electronics System Design & Manufacturing Services (ESDM/EMS) company located in E-city EMC (Formerly Fabcity), Hyderabad, India. The company was established in 2017 to support the growing demand for Electronics Manufacturing Services (EMS). Our one-stop-solution electronics manufacturing services (EMS) factory incorporates quick prototyping, mid-range volume production to high volume production.
               </p>
               <p className="text-[#334155] text-base leading-relaxed">
-                We provide Embedded Design, SMT Mounting, product integration, Testing & box build services. Our products are manufactured using Robust and advanced SMT machinery in Class 100000(ISO-8) Cleanroom to meet world wide quality standards. We also provide comprehensive supply chain management.we offer our administrations to a wide range of customers for their product development and support them in convertibility and scalability of manufacturing. SRILIN has been the favoured worth maker for its clients through imaginative and effective Electronic System Assembling. </p>
+                We provide Embedded Design, SMT Mounting, product integration, Testing & box build services. Our products are manufactured using Robust and advanced SMT machinery in Class 100000(ISO-8) Cleanroom to meet world wide quality standards. We also provide comprehensive supply chain management.We offer our services to a wide range of customers for their product development and we support our customers with scalable and flexible manufacturing solutions. SRILIN has been the favoured worth maker for its clients through imaginative and effective Electronic System Assembling. </p>
               <ul className="flex flex-col gap-2 mt-1">
                 {['Design-to-delivery in one location', 'Aerospace-grade quality systems', 'Flexible volumes — prototype to high-volume'].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-[#334155]">
