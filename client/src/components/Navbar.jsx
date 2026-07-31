@@ -85,10 +85,9 @@ export default function Navbar() {
 
   const handleLanguageChange = (code) => {
     setActiveLang(code);
-    const selectElement = document.querySelector('.goog-te-combo');
+    setIsLangOpen(false); // Close dropdown
     
     if (code === 'en') {
-      // Clear cookies and reload for English (original language)
       document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
       document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
@@ -96,11 +95,11 @@ export default function Navbar() {
       return;
     }
 
+    const selectElement = document.querySelector('.goog-te-combo');
     if (selectElement) {
       selectElement.value = code;
-      selectElement.dispatchEvent(new Event('change'));
+      selectElement.dispatchEvent(new Event('change', { bubbles: true }));
     } else {
-      // Fallback: manually update cookie and reload
       document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
       document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
