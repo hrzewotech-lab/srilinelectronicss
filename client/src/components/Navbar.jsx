@@ -74,6 +74,13 @@ export default function Navbar() {
 
     const scriptId = 'google-translate-script';
     if (!document.getElementById(scriptId)) {
+      if (!document.getElementById('google_translate_element')) {
+        const div = document.createElement('div');
+        div.id = 'google_translate_element';
+        div.style.display = 'none';
+        document.body.appendChild(div);
+      }
+
       const script = document.createElement('script');
       script.id = scriptId;
       script.type = 'text/javascript';
@@ -86,11 +93,26 @@ export default function Navbar() {
   const handleLanguageChange = (code) => {
     setActiveLang(code);
     setIsLangOpen(false); // Close dropdown
-    
+
+    const domain = window.location.hostname;
+    const parts = domain.split('.');
+    let rootDomain = domain;
+    if (parts.length > 1) {
+      rootDomain = parts.slice(-2).join('.');
+    }
+
+    const domainsToClear = [
+      '',
+      ` domain=${domain};`,
+      ` domain=.${domain};`,
+      ` domain=${rootDomain};`,
+      ` domain=.${rootDomain};`
+    ];
+
     if (code === 'en') {
-      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
-      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
+      domainsToClear.forEach(d => {
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;${d}`;
+      });
       window.location.reload();
       return;
     }
@@ -100,13 +122,18 @@ export default function Navbar() {
       selectElement.value = code;
       selectElement.dispatchEvent(new Event('change', { bubbles: true }));
     } else {
-      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
-      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
-
+      domainsToClear.forEach(d => {
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;${d}`;
+      });
+      
       document.cookie = `googtrans=/en/${code}; path=/;`;
-      document.cookie = `googtrans=/en/${code}; path=/; domain=${window.location.hostname};`;
-      document.cookie = `googtrans=/en/${code}; path=/; domain=.${window.location.hostname};`;
+      document.cookie = `googtrans=/en/${code}; path=/; domain=${domain};`;
+      document.cookie = `googtrans=/en/${code}; path=/; domain=.${domain};`;
+      if (domain !== rootDomain) {
+        document.cookie = `googtrans=/en/${code}; path=/; domain=${rootDomain};`;
+        document.cookie = `googtrans=/en/${code}; path=/; domain=.${rootDomain};`;
+      }
+      
       window.location.reload();
     }
   };
@@ -247,8 +274,7 @@ export default function Navbar() {
       </header>
       <div className="site-header-spacer" aria-hidden="true" />
 
-      {/* Hidden container for Google Translate script callbacks */}
-      <div id="google_translate_element" style={{ display: 'none' }} />
+      {/* Hidden container for Google Translate script callbacks is injected dynamically */}
 
       {/* Premium custom Language floating Drop-up widget */}
       <div className="fixed bottom-6 right-4 sm:right-6 z-50 font-sans">
