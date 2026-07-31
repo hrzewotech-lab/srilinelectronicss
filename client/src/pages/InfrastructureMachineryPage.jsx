@@ -176,7 +176,7 @@ const equipment = [
     details: [
       '48 x 48mm to 508mm x 400mm PCB handling capability.',
       'PBGA, FBGA, Micro-BGA, CSP, Ultra-fine pitch QFP & QFN mounting capability.',
-      'Mounter accuracy of 0.025 mm, Cpk ≥ 1.00 (3σ).',
+      'Chip Placement Accuracy: ±0.025 mm, Cpk ≥ 1.00 (3σ).',
       'Supports Fine pitch components (01005 & 0201)',
       'Intelligent smart feeders (4mm to 72mm & 3 vibratory stick feeders).',
       'Fuji- AIMEX IIIc with Tray unit for chip & IC/BGA/other components mounting.',

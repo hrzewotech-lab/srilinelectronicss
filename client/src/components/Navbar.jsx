@@ -84,12 +84,15 @@ export default function Navbar() {
   }, []);
 
   const handleLanguageChange = (code) => {
-    if (code === 'en') {
-      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
-    } else {
+    // Clear existing cookies to prevent conflicts
+    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
+    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
+
+    if (code !== 'en') {
       document.cookie = `googtrans=/en/${code}; path=/;`;
       document.cookie = `googtrans=/en/${code}; path=/; domain=${window.location.hostname};`;
+      document.cookie = `googtrans=/en/${code}; path=/; domain=.${window.location.hostname};`;
     }
     window.location.reload();
   };
