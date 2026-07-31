@@ -84,17 +84,32 @@ export default function Navbar() {
   }, []);
 
   const handleLanguageChange = (code) => {
-    // Clear existing cookies to prevent conflicts
-    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
-    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
+    setActiveLang(code);
+    const selectElement = document.querySelector('.goog-te-combo');
+    
+    if (code === 'en') {
+      // Clear cookies and reload for English (original language)
+      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
+      window.location.reload();
+      return;
+    }
 
-    if (code !== 'en') {
+    if (selectElement) {
+      selectElement.value = code;
+      selectElement.dispatchEvent(new Event('change'));
+    } else {
+      // Fallback: manually update cookie and reload
+      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
+
       document.cookie = `googtrans=/en/${code}; path=/;`;
       document.cookie = `googtrans=/en/${code}; path=/; domain=${window.location.hostname};`;
       document.cookie = `googtrans=/en/${code}; path=/; domain=.${window.location.hostname};`;
+      window.location.reload();
     }
-    window.location.reload();
   };
 
   useEffect(() => {
