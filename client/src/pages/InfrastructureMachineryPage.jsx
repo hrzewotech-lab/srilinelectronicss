@@ -198,7 +198,7 @@ const equipment = [
     summary: 'Panasonic NPM-D3A Pick and Place Machine with 92500 CPH.',
     details: [
       'Board handling capacity of 50mm × 50mm ~ 510mm × 590mm.',
-      'Mounter accuracy of 0.025 mm, Cpk ≥ 1.00 (3σ).',
+      'Chip Placement Accuracy: ±0.025 mm, Cpk ≥ 1.00 (3σ).',
       'Supports Fine pitch components (01005 & 0201).',
       'Intelligent smart feeders (4mm to 32mm).',
       'Two Extra feeder carts for quick change over.',
